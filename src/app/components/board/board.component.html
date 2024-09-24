@@ -1,1 +1,23 @@
-<p>board works!</p>
+<h1>Current Player: {{ player }} </h1>
+
+<button  outline status="danger" (click)="newGame()">Start new Game</button>
+
+@if(winner){
+    Player {{ winner }} won the game!
+
+
+}
+
+<main>
+    @for (val of squares; track $index) {
+        <app-square 
+        [value]="val"
+        (click)="makeMove($index)"> 
+
+    </app-square>
+    }
+    
+</main>
+
+
+
